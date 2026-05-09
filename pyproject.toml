@@ -1,0 +1,32 @@
+[project]
+name = "finam_api_client_by_salimster"
+version = "0.0.0"
+authors = [
+  { name="salimster", email="salim.buskunov.2000@gmail.com" },
+]
+description = "Пакет-клиент для FinamAPI."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+  "grpcio==1.80.0",
+  "grpcio-tools==1.80.0",
+  "protobuf==6.33.6",
+  "setuptools==82.0.1",
+  "typing_extensions==4.15.0",
+]
+
+[project.urls]
+Repository = "https://github.com/BuskunovSalim/FinamAPIClient"
+
+[project.optional-dependencies]
+test = ["pytest==9.0.3"]
+
+
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/finam_client"]
+[tool.pytest.ini_options]
+pythonpath = ["src"]
